@@ -1,0 +1,8 @@
+.credit-link {
+  text-decoration: none;
+  color: #555864;
+  transition: 200ms ease-in-out;
+}
+.credit-link:hover {
+  color: #295e94;
+}

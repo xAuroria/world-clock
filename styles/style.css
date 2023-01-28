@@ -28,6 +28,8 @@ h2 {
 .city-select {
   width: 100%;
   font-size: 18px;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .city {

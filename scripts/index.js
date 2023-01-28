@@ -1,6 +1,6 @@
 function updateTime() {
   // Timezone 1
-  if (document.querySelector("#date-1")) {
+  if (document.querySelector("#city-1")) {
     document.querySelector("#date-1").innerHTML = moment()
       .tz("America/Los_Angeles")
       .format("MMMM Do YYYY");
@@ -13,7 +13,7 @@ function updateTime() {
   }
 
   //Timezone 2
-  if (document.querySelector("#date-2")) {
+  if (document.querySelector("#city-2")) {
     document.querySelector("#date-2").innerHTML = moment()
       .tz("Europe/London")
       .format("MMMM Do YYYY");
@@ -26,7 +26,7 @@ function updateTime() {
   }
 
   //Timezone 3
-  if (document.querySelector("#date-3")) {
+  if (document.querySelector("#city-3")) {
     document.querySelector("#date-3").innerHTML = moment()
       .tz("Asia/Tokyo")
       .format("MMMM Do YYYY");
@@ -39,7 +39,7 @@ function updateTime() {
   }
 
   //Timezone 4
-  if (document.querySelector("#date-4")) {
+  if (document.querySelector("#city-4")) {
     document.querySelector("#date-4").innerHTML = moment()
       .tz("Australia/Sydney")
       .format("MMMM Do YYYY");
@@ -60,14 +60,20 @@ function updateCity(event) {
     }
     let cityName = cityTimezone.replace("_", " ").split("/")[1];
     let cityTime = moment().tz(cityTimezone);
-    document.querySelector("#cities").innerHTML = `<div class="city">
+    document.querySelector(
+      "#cities"
+    ).innerHTML = `<div class="city" id="city-current">
           <div>
             <h2>${cityName}</h2>
-            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+            <div class="date" id="date-current">${cityTime.format(
+              "MMMM Do YYYY"
+            )}</div>
           </div>
           <div class="time">
-            <span>${cityTime.format("h:mm:ss ")}</span
-            ><span class="time-unit">${cityTime.format("A")}</span>
+            <span id="time-current">${cityTime.format("h:mm:ss ")}</span
+            ><span class="time-unit" id="time-unit-current">${cityTime.format(
+              "A"
+            )}</span>
           </div>
         </div>
         <a href="/" class="back">Back</a>`;

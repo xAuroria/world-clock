@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="styles/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data-1970-2030.min.js"></script>
-    <title>World Clock</title>
+    <title>World Clocks</title>
   </head>
   <body>
     <div class="container">
-      <h1>World Clock</h1>
-      <select name="city" id="city-select">
-        <option value="">Select a city</option>
+      <h1>World Clocks</h1>
+
+      <select name="city" class="city-select" id="city-select">
+        <option value="">Choose city</option>
         <option value="honolulu">Honolulu</option>
         <option value="los-angeles">Los Angeles</option>
         <option value="new-york">New York</option>
@@ -25,33 +26,41 @@
       </select>
 
       <div class="cities">
-        <div class="city-1">
-          <h2>New York 🇺🇸</h2>
-          <div class="date">January 28th 2023</div>
-          <div class="time">10:47:35 AM</div>
+        <div class="city first">
+          <div>
+            <h2>Los Angeles 🇺🇸</h2>
+            <div class="date">January 28th 2023</div>
+          </div>
+          <div class="time">10:47:35 <span class="time-unit">AM</span></div>
         </div>
 
-        <div class="city-2">
-          <h2>London 🇬🇧</h2>
-          <div class="date">January 28th 2023</div>
-          <div class="time">10:47:35 AM</div>
+        <div class="city second">
+          <div>
+            <h2>London 🇬🇧</h2>
+            <div class="date">January 28th 2023</div>
+          </div>
+          <div class="time">10:47:35 <span class="time-unit">AM</span></div>
         </div>
 
-        <div class="city-3">
-          <h2>Tokyo 🇯🇵</h2>
-          <div class="date">January 28th 2023</div>
-          <div class="time">10:47:35 AM</div>
+        <div class="city third">
+          <div>
+            <h2>Tokyo 🇯🇵</h2>
+            <div class="date">January 28th 2023</div>
+          </div>
+          <div class="time">10:47:35 <span class="time-unit">AM</span></div>
         </div>
 
-        <div class="city-4">
-          <h2>Sydney 🇦🇺</h2>
-          <div class="date">January 28th 2023</div>
-          <div class="time">10:47:35 AM</div>
+        <div class="city fourth">
+          <div>
+            <h2>Sydney 🇦🇺</h2>
+            <div class="date">January 28th 2023</div>
+          </div>
+          <div class="time">10:47:35 <span class="time-unit">AM</span></div>
         </div>
       </div>
     </div>
 
-    <footer>
+    <footer class="credits">
       <a
         href="https://github.com/xAuroria/world-clock"
         target="_blank"

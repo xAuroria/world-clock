@@ -1,14 +1,16 @@
 function updateTime() {
   // Timezone 1
-  document.querySelector("#date-1").innerHTML = moment()
-    .tz("America/Los_Angeles")
-    .format("MMMM Do YYYY");
-  document.querySelector("#time-1").innerHTML = moment()
-    .tz("America/Los_Angeles")
-    .format("h:mm:ss ");
-  document.querySelector("#time-unit-1").innerHTML = moment()
-    .tz("America/Los_Angeles")
-    .format("A");
+  if (document.querySelector("#date-1")) {
+    document.querySelector("#date-1").innerHTML = moment()
+      .tz("America/Los_Angeles")
+      .format("MMMM Do YYYY");
+    document.querySelector("#time-1").innerHTML = moment()
+      .tz("America/Los_Angeles")
+      .format("h:mm:ss ");
+    document.querySelector("#time-unit-1").innerHTML = moment()
+      .tz("America/Los_Angeles")
+      .format("A");
+  }
 
   //Timezone 2
   if (document.querySelector("#date-2")) {
@@ -56,22 +58,19 @@ function updateCity(event) {
     if (cityTimezone === "current") {
       cityTimezone = moment.tz.guess();
     }
-    let cityName = cityTimezone.replace("_", " ").split("/");
+    let cityName = cityTimezone.replace("_", " ").split("/")[1];
     let cityTime = moment().tz(cityTimezone);
     document.querySelector("#cities").innerHTML = `<div class="city">
           <div>
-            <h2>${cityName[1]}</h2>
-            <div class="date" id="date-1">${cityTime.format(
-              "MMMM Do YYYY"
-            )}</div>
+            <h2>${cityName}</h2>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="time">
-            <span id="time-1">${cityTime.format("h:mm:ss ")}</span
-            ><span class="time-unit" id="time-unit-1">${cityTime.format(
-              "A"
-            )}</span>
+            <span>${cityTime.format("h:mm:ss ")}</span
+            ><span class="time-unit">${cityTime.format("A")}</span>
           </div>
-        </div>`;
+        </div>
+        <a href="/" class="back">Back</a>`;
   }
 }
 
